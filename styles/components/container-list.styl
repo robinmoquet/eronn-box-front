@@ -1,0 +1,52 @@
+ul
+	margin-top calc(var(--space) * 5)
+	li
+		display block
+		margin calc(var(--space) * 3) 0
+		cursor pointer
+		.paper
+			transition all .3s ease
+			background-color var(--background)
+		&:hover
+			.paper
+				background-color var(--background-light)
+	li.in-process:hover
+		cursor default
+		.paper
+			background-color var(--background)
+	.li__header
+		display flex
+		justify-content space-between
+		align-items center
+		> div:first-child
+			flex 1
+			margin-right calc(var(--space) * 2)
+			display flex
+			justify-content space-between
+			align-items center
+
+		.button
+			padding calc(var(--space) * 1) calc(var(--space) * 2)
+
+	.li__title
+		font-weight bold
+		font-size 24px
+		color var(--tonic)
+
+	.li__footer
+		margin-top var(--space)
+		display flex
+		justify-content space-between
+		align-items center
+		p
+			font-size 13px
+			color var(--text-secondary)
+
+	.process
+		margin-top calc(var(--space))
+		font-style italic
+		color var(--text-secondary)
+		.status
+			font-style normal
+			color var(--tonic)
+			font-weight bold

@@ -1,0 +1,24 @@
+.loader-container
+  position relative
+  padding-bottom calc(var(--space) * 2)
+  margin-top calc(var(--space) * 2)
+  height h = 5px
+  .loader-bar
+    position absolute
+    left 50%
+    top 0
+    background repeating-linear-gradient(to right, var(--error) 0%, var(--tonic) 50%, var(--error) 100%)
+    width calc(100% + (var(--space) * 3) * 2)
+    transform translateX(-50%)
+    height @height
+    background-size 200% auto
+    background-position 0 100%
+    animation gradient 2s infinite
+    animation-fill-mode forwards
+    animation-timing-function linear
+
+
+@keyframes gradient {
+  0%   { background-position: 0 0; }
+  100% { background-position: -200% 0; }
+}

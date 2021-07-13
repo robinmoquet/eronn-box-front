@@ -3,19 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "event-source-polyfill": "^1.0.24",
+    "formik": "^2.2.9",
     "react": "^17.0.2",
+    "react-cookie": "^4.0.3",
     "react-dom": "^17.0.2",
+    "react-modal": "^3.14.3",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "redux": "^4.1.0",
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "concurrently -k -n \"Stylus, React\" -p \"[{name}]\" -c \"yellow,blue\" \"npm run stylus:watch\" \"npm run react:start\"",
+    "build": "npm run stylus:build && npm run react:build",
+    "stylus:watch": "stylus ./styles/index.styl --include ./styles --out ./public/css --watch -m --compress",
+    "stylus:build": "stylus ./styles/index.styl --include ./styles --out ./public/css --compress",
+    "react:start": "react-scripts start",
+    "react:build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [

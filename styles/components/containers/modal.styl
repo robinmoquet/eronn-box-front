@@ -1,0 +1,39 @@
+@css{
+    .modal__overlay {
+        background-color: rgba(var(--background-rgb), 0.7);
+    }
+}
+
+.modal__overlay
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    display flex
+    justify-content center
+    align-items center
+    .modal-content
+        outline none
+        background var(--background-light)
+        border-radius var(--default-radius)
+        box-shadow 0 5px 10px var(--shadow)
+        position relative
+        
+        width 50%
+        +breakpoint(md, down)
+            width 70%
+        +breakpoint(sm, down)
+            width calc(100% - var(--space) * 3)
+
+        .modal
+            padding calc(var(--space) * 3)
+            position relative
+            .sub-title
+                margin-right calc(var(--space) * 6)
+            .modal-close-btn
+                width auto
+                position absolute
+                right calc(var(--space) * 3)
+                top calc(var(--space) * 3)
+                padding var(--space)

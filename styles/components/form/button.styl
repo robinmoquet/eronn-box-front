@@ -1,0 +1,41 @@
+.button
+    cursor pointer
+    background var(--tonic)
+    padding calc(var(--space) * 2)
+    border-radius var(--default-radius)
+    display inline-block
+    color var(--text-contrast)
+    // box-shadow 0 5px 5px var(--shadow)
+    font-weight 600
+    transition .3s ease
+
+    +breakpoint(sm, down)
+        width 100%
+
+    &:hover
+        background var(--tonic-hover)
+        box-shadow 0 5px 5px var(--shadow)
+
+    &.button--stroke
+        background none
+        border 1px solid var(--tonic)
+        color var(--tonic)
+        padding var(--space) calc(var(--space) * 2)
+
+        &:hover
+            background var(--tonic)
+            color var(--text-contrast)
+
+    &.button--secondary
+        background var(--background-light)
+        color var(--text)
+    &.button--error
+        background var(--background-error)
+        color var(--text)
+    &.button--disabled
+        background var(--disabled)
+        color var(--text)
+        cursor default
+        &:hover
+            background var(--disabled)
+            box-shadow none

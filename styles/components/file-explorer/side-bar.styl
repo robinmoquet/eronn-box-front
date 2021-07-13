@@ -1,0 +1,30 @@
+.file-explorer
+    .side-bar
+        width 100%
+        height 80vh
+        padding 0 calc(var(--space) * 3)
+        border-right 1px solid var(--text-secondary)
+
+        .folder-side-bar
+            .folder
+                padding calc(var(--space) / 2) 0
+                display flex
+                align-items center
+                cursor pointer
+                border-radius var(--default-radius)
+                &:hover, &.selected
+                    background var(--background-light)
+                .folder__name
+                    font-size 14px
+                span
+                    padding 0 calc(var(--space) / 2)
+
+            .folder-children
+                padding-top calc(var(--space) / 2)
+                padding-left calc(var(--space) * 1.5)
+                max-height 0px
+                overflow hidden
+                transition .5s max-height cubic-bezier(.74,.01,.41,1)
+                &.open
+                    max-height 300px
+                    overflow scroll

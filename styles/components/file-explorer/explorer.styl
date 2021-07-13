@@ -1,0 +1,40 @@
+.file-explorer
+    .breadcrumb-list
+        display flex
+        align-items center
+        margin-bottom calc(var(--space) * 2)
+        .breadcrumb-item
+            font-size 18px
+            font-weight bold
+            padding 0 var(--space)
+            cursor pointer
+            transition all .3s ease
+            &:hover
+                color var(--tonic)
+        .breadcrumb-separator
+            margin-bottom -2px
+    .explorer
+        display grid
+        grid-template-columns repeat(4, 1fr)
+        grid-gap calc(var(--space) * 2)
+        +breakpoint(md, down) 
+            grid-template-columns repeat(2, 1fr)
+        .file, .folder
+            border-radius var(--default-radius)
+            border 1px solid var(--text-secondary)
+            cursor pointer
+            padding calc(var(--space) * 2)
+            transition all .3s ease
+            display flex
+            align-items center
+            &:hover
+                background-color var(--background)
+                transform scale(1.03)
+                box-shadow 0 5px 10px var(--shadow)
+            .material-icons
+                margin-right calc(var(--space) * 2)
+            &.selected
+                background-color var(--text-secondary)
+                color var(--text-contrast)
+                .material-icons
+                    color var(--text-contrast)

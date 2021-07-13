@@ -1,0 +1,6 @@
+export const DOWNLOAD_INIT = 'DOWNLOAD_INIT';
+export const DOWNLOAD_PROGRESS = 'DOWNLOAD_PROGRESS';
+export const DOWNLOAD_END = 'DOWNLOAD_END';
+export const DECRYPT_INIT = 'DECRYPT_INIT';
+export const DECRYPT_END = 'DECRYPT_END';
+export const DECRYPT_FAILED = 'DECRYPT_FAILED';
